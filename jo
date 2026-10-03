@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokodo Pizza | Authentic Italian Pizza | Bole Cargo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#1E1E1E',
+                        terracotta: '#D34225',
+                        basil: '#3B7A57',
+                        cream: '#FAF6F0',
+                        warmcard: '#F4EFE6'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FAF6F0; color: #1E1E1E; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(211,66,37,0.85) 100%); }
+        .menu-category-btn.active { background-color: #D34225; color: #FAF6F0; border-color: #D34225; }
+    </style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-charcoal text-cream py-2 px-4 text-center text-xs md:text-sm font-medium flex justify-center items-center gap-4">
+        <span><i class="fas fa-map-marker-alt text-terracotta mr-1"></i> Bole Cargo, Addis Ababa</span>
+        <span><i class="fas fa-clock text-terracotta mr-1"></i> Open Daily until 11:00 PM</span>
+        <span><i class="fas fa-phone-alt text-terracotta mr-1"></i> 0911439524</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-charcoal/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-terracotta flex items-center justify-center text-cream font-serif text-xl font-bold">M</div>
+                <div>
+                    <h1 class="font-serif text-2xl font-bold tracking-tight text-charcoal">MOKODO PIZZA</h1>
+                    <p class="text-xs text-terracotta font-semibold uppercase tracking-widest">Authentic Italian Pizza</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#menu" class="hover:text-terracotta transition">Menu & Prices</a>
+                <a href="#about" class="hover:text-terracotta transition">About Us</a>
+                <a href="#contact" class="hover:text-terracotta transition">Contact & Map</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="tel:0911439524" class="hidden sm:inline-flex items-center gap-2 text-charcoal font-semibold hover:text-terracotta">
+                    <i class="fas fa-phone text-terracotta"></i> 0911439524
+                </a>
+                <button onclick="openOrderModal()" class="bg-terracotta text-cream px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg hover:bg-terracotta/90 transition transform hover:-translate-y-0.5">
+                    Order Online
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-charcoal text-cream py-20 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="inline-block bg-terracotta/30 text-cream border border-terracotta/50 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">
+                    Bole Cargo's Finest Pizzeria
+                </span>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                    Authentic Italian Pizza & More.
+                </h1>
+                <p class="text-cream/90 text-lg max-w-xl font-light">
+                    Experience genuine Italian flavors right here in Bole Cargo. From crispy wood-fired pizzas and stuffed calzones to fresh children's favorites and delicious desserts, baked fresh daily.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <button onclick="openOrderModal()" class="bg-terracotta text-cream px-8 py-3.5 rounded-full font-bold shadow-xl hover:bg-terracotta/95 transition flex items-center gap-2">
+                        <i class="fas fa-utensils"></i> Order Online Now
+                    </button>
+                    <a href="#menu" class="bg-transparent border-2 border-cream text-cream px-8 py-3.5 rounded-full font-bold hover:bg-cream hover:text-charcoal transition flex items-center gap-2">
+                        View Menu & Prices
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="w-full max-w-md bg-charcoal/80 backdrop-blur-md p-6 rounded-3xl border border-cream/20 shadow-2xl">
+                    <h3 class="font-serif text-xl font-bold mb-4 text-center border-b border-cream/10 pb-3">Quick Order Info</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-cream/5">
+                            <span class="text-cream/75">Location</span>
+                            <span class="font-semibold text-cream">Bole Cargo, Addis Ababa</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-cream/5">
+                            <span class="text-cream/75">Closing Time</span>
+                            <span class="font-semibold text-cream">11:00 PM Daily</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-cream/5">
+                            <span class="text-cream/75">Direct Hotline</span>
+                            <span class="font-semibold text-terracotta">0911439524</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-cream/75">Takeaway Box</span>
+                            <span class="font-semibold text-cream">60 ETB</span>
+                        </div>
+                    </div>
+                    <button onclick="openOrderModal()" class="w-full mt-6 bg-basil text-cream py-3 rounded-xl font-bold hover:bg-basil/90 transition shadow-md">
+                        Start Your Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Our Complete Menu & Prices</h2>
+            <p class="text-charcoal/70">Browse our authentic Italian selection. Click [Add +] on any item to build your direct order.</p>
+        </div>
+
+        <!-- Sticky Category Filters -->
+        <div class="sticky top-20 z-40 bg-cream/95 py-4 mb-8 flex overflow-x-auto gap-3 no-scrollbar border-b border-charcoal/10">
+            <button onclick="filterMenu('all')" class="menu-category-btn active px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">All Items</button>
+            <button onclick="filterMenu('pizza')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Pizzas</button>
+            <button onclick="filterMenu('calzone')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Calzones</button>
+            <button onclick="filterMenu('halfhalf')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Half-Half Pizzas</button>
+            <button onclick="filterMenu('fasting')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Fasting / Vegetarian</button>
+            <button onclick="filterMenu('children')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Children's Menu</button>
+            <button onclick="filterMenu('drinks')" class="menu-category-btn px-5 py-2 rounded-full text-sm font-semibold border border-charcoal/20 whitespace-nowrap transition">Drinks</button>
+        </div>
+
+        <!-- Food Grid -->
+        <div id="food-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Items rendered dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-charcoal text-cream py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="font-serif text-2xl font-bold mb-4">Mokodo Pizza</h3>
+                <p class="text-cream/70 text-sm leading-relaxed mb-4">
+                    Authentic Italian pizza and specialties served fresh daily around Bole Cargo, Addis Ababa. Open until 11:00 PM.
+                </p>
+                <p class="text-terracotta font-semibold text-lg">Hotline: 0911439524</p>
+            </div>
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-cream/80">
+                    <li><a href="#menu" class="hover:text-terracotta">Full Menu</a></li>
+                    <li><a href="#" onclick="openOrderModal()" class="hover:text-terracotta">Online Ordering</a></li>
+                    <li><span class="text-cream/50">Takeaway & Delivery Available</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-4">Location & Hours</h4>
+                <p class="text-sm text-cream/80 mb-2"><i class="fas fa-map-marker-alt text-terracotta mr-2"></i> Bole Cargo, Addis Ababa</p>
+                <p class="text-sm text-cream/80 mb-2"><i class="fas fa-clock text-terracotta mr-2"></i> Daily: Open until 11:00 PM</p>
+                <p class="text-sm text-cream/80"><i class="fas fa-box text-terracotta mr-2"></i> Takeaway Box: 60 ETB</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-cream/10 text-center text-xs text-cream/50">
+            &copy; 2026 Mokodo Pizza. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Ordering Modal -->
+    <div id="order-modal" class="fixed inset-0 z-50 bg-charcoal/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-cream w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+            <div class="bg-charcoal text-cream px-6 py-4 flex justify-between items-center">
+                <h3 class="font-serif text-xl font-bold">Direct Online Order</h3>
+                <button onclick="closeOrderModal()" class="text-cream/70 hover:text-cream text-xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6">
+                <!-- Selected Items Summary -->
+                <div>
+                    <h4 class="font-bold text-sm mb-2 text-charcoal/80 uppercase tracking-wider">Your Order Items</h4>
+                    <div id="modal-items-list" class="space-y-2 bg-warmcard p-4 rounded-xl border border-charcoal/10">
+                        <p class="text-sm text-charcoal/60">No items selected yet. Choose items from the menu below or add extra toppings!</p>
+                    </div>
+                </div>
+
+                <!-- Extra Toppings Selector -->
+                <div>
+                    <h4 class="font-bold text-sm mb-2 text-charcoal/80 uppercase tracking-wider">Extra Toppings (Optional)</h4>
+                    <div id="toppings-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-40 overflow-y-auto p-2 bg-warmcard rounded-xl border border-charcoal/10 text-sm">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- Takeaway Box Option -->
+                <div class="flex items-center justify-between p-3 bg-warmcard rounded-xl border border-charcoal/10">
+                    <div>
+                        <span class="font-semibold text-sm">Takeaway Box</span>
+                        <p class="text-xs text-charcoal/60">60 ETB per box</p>
+                    </div>
+                    <input type="checkbox" id="takeaway-box-check" onchange="updateTotal()" class="w-5 h-5 accent-terracotta cursor-pointer">
+                </div>
+
+                <!-- Customer Details Form -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm text-charcoal/80 uppercase tracking-wider">Delivery / Pickup Details</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="cust-name" placeholder="Your Name" class="p-3 rounded-xl border border-charcoal/20 bg-white text-sm focus:outline-none focus:border-terracotta">
+                        <input type="text" id="cust-phone" placeholder="Phone Number (e.g. 09...)" class="p-3 rounded-xl border border-charcoal/20 bg-white text-sm focus:outline-none focus:border-terracotta">
+                    </div>
+                    <textarea id="cust-address" placeholder="Delivery Address in Bole Cargo / Special Instructions" class="w-full p-3 rounded-xl border border-charcoal/20 bg-white text-sm focus:outline-none focus:border-terracotta h-20"></textarea>
+                </div>
+            </div>
+            
+            <div class="bg-warmcard px-6 py-4 border-t border-charcoal/10 flex items-center justify-between">
+                <div>
+                    <span class="text-xs text-charcoal/60 block">Total Amount</span>
+                    <span id="modal-total-price" class="font-serif text-2xl font-bold text-terracotta">0 ETB</span>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="closeOrderModal()" class="px-5 py-2.5 rounded-full border border-charcoal/20 font-semibold text-sm hover:bg-charcoal/5">Cancel</button>
+                    <button onclick="submitOrder()" class="bg-terracotta text-cream px-6 py-2.5 rounded-full font-bold text-sm shadow-md hover:bg-terracotta/90 transition">Place Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        const menuData = [
+            // Calzones
+            { id: 1, category: 'calzone', name: 'Calzone Classico con Ricotta', price: 930, desc: 'Folded pizza stuffed with rich ricotta, mozzarella, and savory fillings.', img: 'https://images.unsplash.com/photo-1581458872088-7509f6e52296?auto=format&fit=crop&w=600&q=80' },
+            { id: 2, category: 'calzone', name: 'Calzone ai Funghi', price: 830, desc: 'Fresh mushrooms, melted mozzarella, and savory herbs folded in crisp dough.', img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=600&q=80' },
+            
+            // Pizzas
+            { id: 3, category: 'pizza', name: 'Ai Mortadella', price: 1270, desc: 'Delicate Italian mortadella, fresh mozzarella, and aromatic garnish.', img: 'https://images.unsplash.com/photo-1595750036130-9b634887754b?auto=format&fit=crop&w=600&q=80' },
+            { id: 4, category: 'pizza', name: 'Quattro Stagioni', price: 1450, desc: 'Four seasons pizza representing mushrooms, olives, ham, and artichokes.', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80' },
+            { id: 5, category: 'pizza', name: 'Quattro Formaggi', price: 1310, desc: 'A rich blend of four premium cheeses over golden melted crust.', img: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?auto=format&fit=crop&w=600&q=80' },
+            { id: 6, category: 'pizza', name: 'Speciale di Norma', price: 1340, desc: 'Signature combination with eggplant, ricotta salata, and rich tomato base.', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80' },
+            { id: 7, category: 'pizza', name: 'La Capricciosa', price: 1450, desc: 'Mozzarella, tomato, mushrooms, artichokes, olives, and cooked ham.', img: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=600&q=80' },
+            { id: 8, category: 'pizza', name: 'Tonno & Tuna', price: 1150, desc: 'Quality tuna, red onions, fresh tomatoes, and mozzarella.', img: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80' },
+            { id: 9, category: 'pizza', name: 'Vegetale / Vegetables', price: 1050, desc: 'Loaded with garden-fresh seasonal vegetables and savory tomato sauce.', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80' },
+
+            // Half-Half Pizzas
+            { id: 10, category: 'halfhalf', name: 'Half Chicken / Half Beef', price: 1400, desc: 'Combine two favorite meats on one delicious pie.', img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80' },
+            { id: 11, category: 'halfhalf', name: 'Crudo - Cotto', price: 1500, desc: 'Prosciutto crudo combined with savory prosciutto cotto.', img: 'https://images.unsplash.com/photo-1595750036130-9b634887754b?auto=format&fit=crop&w=600&q=80' },
+            { id: 12, category: 'halfhalf', name: 'Salami Formaggi', price: 1500, desc: 'Spicy salami paired with rich melted cheeses.', img: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?auto=format&fit=crop&w=600&q=80' },
+            { id: 13, category: 'halfhalf', name: 'Formaggi & Chicken', price: 1450, desc: 'Four cheeses on one half, seasoned chicken on the other.', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80' },
+            { id: 14, category: 'halfhalf', name: 'Salami Chicken Pesto Buffalo', price: 1600, desc: 'Gourmet combination of salami, chicken, pesto, and buffalo cheese.', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80' },
+            { id: 15, category: 'halfhalf', name: 'Tuna Chicken', price: 1250, desc: 'Ocean tuna paired with tender seasoned chicken.', img: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80' },
+            { id: 16, category: 'halfhalf', name: 'Tuna Vegetable', price: 1150, desc: 'Fresh garden vegetables paired with savory tuna.', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80' },
+            { id: 17, category: 'halfhalf', name: 'Pesto Chicken', price: 1400, desc: 'Fragrant basil pesto sauce paired with tender chicken pieces.', img: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=600&q=80' },
+
+            // Fasting / Vegetarian
+            { id: 18, category: 'fasting', name: 'Vegetable Fasting Pizza', price: 689, desc: 'Plant-based vegetable pizza prepared for fasting days.', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80' },
+            { id: 19, category: 'fasting', name: 'Tonno / Tuna a Digiuno (Fasting)', price: 800, desc: 'Tuna fasting preparation with fresh tomato and herbs.', img: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80' },
+
+            // Children's Menu
+            { id: 20, category: 'children', name: 'Mickey Mouse Pizza', price: 550, desc: 'Kid-friendly shaped pizza with mild cheese and tomato sauce.', img: 'https://images.unsplash.com/photo-1548340748-6a22c4f069f5?auto=format&fit=crop&w=600&q=80' },
+            { id: 21, category: 'children', name: 'Anbessa Pizza', price: 750, desc: 'Fun and delicious child-sized specialty pizza.', img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80' },
+
+            // Drinks
+            { id: 22, category: 'drinks', name: 'Still Water (0.5 Liter)', price: 45, desc: 'Refreshing purified bottled water.', img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80' },
+            { id: 23, category: 'drinks', name: 'Still Water (1 Liter)', price: 55, desc: 'Large purified bottled water.', img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80' },
+            { id: 24, category: 'drinks', name: 'Soda Drinks', price: 60, desc: 'Assorted refreshing soft drinks (Cola, Fanta, Sprite).', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80' },
+            { id: 25, category: 'drinks', name: 'Ambo Soda', price: 80, desc: 'Sparkling mineral water.', img: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=600&q=80' },
+            { id: 26, category: 'drinks', name: 'Sweet Soda', price: 90, desc: 'Flavored sweet carbonated beverage.', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80' }
+        ];
+
+        const toppingsData = [
+            { name: 'Mozzarella', price: 190 },
+            { name: 'Buffalo Cheese', price: 399 },
+            { name: 'Prosciutto Crudo', price: 250 },
+            { name: 'Chicken', price: 195 },
+            { name: 'Prosciutto Cotto', price: 250 },
+            { name: 'Beef', price: 185 },
+            { name: 'Salame Piccante', price: 250 },
+            { name: 'Rucola / Basil', price: 150 },
+            { name: 'Olives', price: 199 },
+            { name: 'Anchovies', price: 235 },
+            { name: 'Pesto Sauce', price: 250 },
+            { name: 'Cherry Tomatoes', price: 135 },
+            { name: 'Salsiccia Sausage', price: 250 },
+            { name: 'Carciofi', price: 199 },
+            { name: 'Gorgonzola', price: 210 },
+            { name: 'Caperi', price: 199 },
+            { name: 'Pancetta', price: 240 },
+            { name: 'Mushroom', price: 185 },
+            { name: 'Tuna', price: 205 },
+            { name: 'Parmigiano', price: 220 }
+        ];
+
+        let cart = [];
+
+        function renderMenu(category = 'all') {
+            const grid = document.getElementById('food-grid');
+            grid.innerHTML = '';
+            const filtered = category === 'all' ? menuData : menuData.filter(item => item.category === category);
+            
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden shadow-md border border-charcoal/10 flex flex-col justify-between hover:shadow-lg transition';
+                card.innerHTML = `
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-charcoal/80 text-cream text-xs px-3 py-1 rounded-full font-semibold">${item.price} ETB</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold mb-2">${item.name}</h3>
+                            <p class="text-charcoal/70 text-sm mb-4">${item.desc}</p>
+                        </div>
+                        <button onclick="addToCart(${item.id})" class="w-full bg-terracotta text-cream py-2.5 rounded-xl font-bold text-sm hover:bg-terracotta/95 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-plus"></i> Add to Order
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterMenu(cat) {
+            document.querySelectorAll('.menu-category-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderMenu(cat);
+        }
+
+        function renderToppings() {
+            const container = document.getElementById('toppings-container');
+            container.innerHTML = '';
+            toppingsData.forEach((top, idx) => {
+                const div = document.createElement('label');
+                div.className = 'flex items-center gap-2 cursor-pointer p-1 hover:bg-white rounded transition';
+                div.innerHTML = `
+                    <input type="checkbox" value="${top.name}" data-price="${top.price}" onchange="updateTotal()" class="accent-terracotta topping-checkbox">
+                    <span class="text-xs">${top.name} (+${top.price} ETB)</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function addToCart(id) {
+            const item = menuData.find(i => i.id === id);
+            cart.push(item);
+            openOrderModal();
+        }
+
+        function openOrderModal() {
+            document.getElementById('order-modal').classList.remove('hidden');
+            updateModalCartDisplay();
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        function updateModalCartDisplay() {
+            const list = document.getElementById('modal-items-list');
+            if (cart.length === 0) {
+                list.innerHTML = '<p class="text-sm text-charcoal/60">No items selected yet. Choose items from the menu or add extra toppings!</p>';
+            } else {
+                list.innerHTML = cart.map((item, idx) => `
+                    <div class="flex justify-between items-center text-sm bg-white p-2 rounded-lg border border-charcoal/10">
+                        <span>${item.name}</span>
+                        <div class="flex items-center gap-3">
+                            <span class="font-semibold">${item.price} ETB</span>
+                            <button onclick="removeFromCart(${idx})" class="text-terracotta hover:text-red-700 font-bold">&times;</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            updateTotal();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateModalCartDisplay();
+        }
+
+        function updateTotal() {
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            
+            // Add toppings
+            document.querySelectorAll('.topping-checkbox:checked').forEach(cb => {
+                total += parseInt(cb.getAttribute('data-price'));
+            });
+
+            // Add takeaway box
+            if (document.getElementById('takeaway-box-check').checked) {
+                total += 60;
+            }
+
+            document.getElementById('modal-total-price').innerText = total + ' ETB';
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+
+            if (!name || !phone) {
+                alert('Please enter your Name and Phone Number to place your order.');
+                return;
+            }
+
+            if (cart.length === 0 && document.querySelectorAll('.topping-checkbox:checked').length === 0) {
+                alert('Please select at least one menu item or topping for your order.');
+                return;
+            }
+
+            const total = document.getElementById('modal-total-price').innerText;
+            let orderSummary = `New Order from Mokodo Website!\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n`;
+            cart.forEach(i => orderSummary += `- ${i.name} (${i.price} ETB)\n`);
+            
+            const selectedToppings = [];
+            document.querySelectorAll('.topping-checkbox:checked').forEach(cb => {
+                selectedToppings.push(`${cb.value} (${cb.dataset.price} ETB)`);
+            });
+            if (selectedToppings.length > 0) {
+                orderSummary += `Toppings: ${selectedToppings.join(', ')}\n`;
+            }
+
+            if (document.getElementById('takeaway-box-check').checked) {
+                orderSummary += `Takeaway Box: Included (60 ETB)\n`;
+            }
+            orderSummary += `Total: ${total}`;
+
+            // Open WhatsApp direct message to 0911439524
+            const whatsappUrl = `https://wa.me/251911439524?text=${encodeURIComponent(orderSummary)}`;
+            window.open(whatsappUrl, '_blank');
+            closeOrderModal();
+        }
+
+        // Initialize on load
+        window.onload = () => {
+            renderMenu('all');
+            renderToppings();
+        };
+    </script>
+</body>
+</html>
